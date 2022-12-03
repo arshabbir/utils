@@ -1,12 +1,16 @@
 package auth
 
 import (
+	"fmt"
+	"time"
 	"utilsmod/config"
+	"utilsmod/logger"
 	"utilsmod/model"
 )
 
 type auth struct {
 	conf config.Config
+	l    logger.Logger
 }
 
 type Auth interface {
@@ -14,16 +18,18 @@ type Auth interface {
 	VerifyToken(model.VerifyTokenRequest) (*model.VerifyTokenResponse, *model.ApiError)
 }
 
-func NewAuth(conf config.Config) Auth {
-	return &auth{conf: conf}
+func NewAuth(conf config.Config, l logger.Logger) Auth {
+	return &auth{conf: conf, l: l}
 }
 
 func (a *auth) Login(l model.LogRequest) (*model.LoginResponse, *model.ApiError) {
 	// Implement the REST api client to interact with auth service and get the token
+	a.l.Log(model.LogRequest{Timestamp: time.Now(), ServiceName: "Auth", Message: fmt.Sprintf("Login reuest from : %v", l)})
 	return nil, nil
 }
 
 func (a *auth) VerifyToken(t model.VerifyTokenRequest) (*model.VerifyTokenResponse, *model.ApiError) {
 	// Implement the REST api client to interact with auth service and get the token
+	a.l.Log(model.LogRequest{Timestamp: time.Now(), ServiceName: "Auth", Message: fmt.Sprintf("Token reuest  : %v", t)})
 	return nil, nil
 }
