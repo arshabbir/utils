@@ -69,7 +69,7 @@ type LoginRequest struct {
 	SecretKey string `json:"secretkey"`
 }
 
-type LoginRespoinse struct {
+type LoginResponse struct {
 	AccessKey string `json:"accesskey"`
 	Token     string `json:"token"`
 }
@@ -91,6 +91,13 @@ type LogRequest struct {
 	Timestamp   time.Time `json:"timestamp"`
 	ServiceName string    `json:"servicename"`
 	Message     string    `json:"message"`
+}
+
+// apiError
+
+type ApiError struct {
+	ErrorCode string `json:"errorcode"`
+	Message   string `json:"message"`
 }
 
 // Tracing model
