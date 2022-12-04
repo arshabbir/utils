@@ -2,8 +2,9 @@ package logger
 
 import (
 	"log"
-	"utils/config"
-	"utils/model"
+
+	"github.com/arshabbir/utils/config"
+	"github.com/arshabbir/utils/model"
 )
 
 type logger struct {

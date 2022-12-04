@@ -3,9 +3,10 @@ package auth
 import (
 	"fmt"
 	"time"
-	"utilsmod/config"
-	"utilsmod/logger"
-	"utilsmod/model"
+
+	"github.com/arshabbir/utils/config"
+	"github.com/arshabbir/utils/logger"
+	"github.com/arshabbir/utils/model"
 )
 
 type eventClient struct {
