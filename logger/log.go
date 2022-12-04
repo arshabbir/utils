@@ -2,8 +2,8 @@ package logger
 
 import (
 	"log"
-	"utilsmod/config"
-	"utilsmod/model"
+	"utils/config"
+	"utils/model"
 )
 
 type logger struct {
