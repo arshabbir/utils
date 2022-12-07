@@ -9,6 +9,14 @@ type Product struct {
 	Price       float64 `json:"price"`
 }
 
+type OrderRequest struct {
+	Product
+	SessionID string `json:"sessionid"`
+}
+
+type OrderResponse struct {
+	StatusCode int `json:"statuscode"`
+}
 type InventoryRequest struct {
 	SeassonID  string   `json:"seassonid"`
 	ProductIDs []string `json:"productids"`
