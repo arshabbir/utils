@@ -105,7 +105,7 @@ type LogRequest struct {
 // apiError
 
 type ApiError struct {
-	ErrorCode string `json:"errorcode"`
+	ErrorCode int    `json:"errorcode"`
 	Message   string `json:"message"`
 }
 
