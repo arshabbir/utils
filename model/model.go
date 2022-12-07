@@ -16,6 +16,7 @@ type OrderRequest struct {
 
 type OrderResponse struct {
 	StatusCode int `json:"statuscode"`
+	TrackingID int `json:"trackingid"`
 }
 type InventoryRequest struct {
 	SeassonID  string   `json:"seassonid"`
