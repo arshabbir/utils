@@ -10,7 +10,7 @@ import (
 )
 
 type eventClient struct {
-	conf config.Config
+	conf *config.Config
 	l    logger.Logger
 }
 
@@ -19,7 +19,7 @@ type EventClient interface {
 	Send(topic string, data []byte) *model.ApiError
 }
 
-func NewEventClient(conf config.Config, l logger.Logger) EventClient {
+func NewEventClient(conf *config.Config, l logger.Logger) EventClient {
 	return &eventClient{conf: conf, l: l}
 }
 

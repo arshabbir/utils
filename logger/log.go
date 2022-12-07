@@ -8,14 +8,14 @@ import (
 )
 
 type logger struct {
-	conf config.Config
+	conf *config.Config
 }
 
 type Logger interface {
 	Log(model.LogRequest)
 }
 
-func NewLogger(conf config.Config) Logger {
+func NewLogger(conf *config.Config) Logger {
 	return &logger{conf: conf}
 }
 

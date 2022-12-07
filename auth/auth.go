@@ -10,7 +10,7 @@ import (
 )
 
 type auth struct {
-	conf config.Config
+	conf *config.Config
 	l    logger.Logger
 }
 
@@ -19,7 +19,7 @@ type Auth interface {
 	VerifyToken(model.VerifyTokenRequest) (*model.VerifyTokenResponse, *model.ApiError)
 }
 
-func NewAuth(conf config.Config, l logger.Logger) Auth {
+func NewAuth(conf *config.Config, l logger.Logger) Auth {
 	return &auth{conf: conf, l: l}
 }
 
