@@ -16,14 +16,14 @@ import (
 type httpClient struct {
 	client *http.Client
 	l      logger.Logger
-	conf   config.Config
+	conf   *config.Config
 }
 
 type HttpClient interface {
 	Do(method string, url string, body io.Reader) ([]byte, error)
 }
 
-func NewHttpClient(conf config.Config, l logger.Logger) HttpClient {
+func NewHttpClient(conf *config.Config, l logger.Logger) HttpClient {
 	var netTransport = &http.Transport{
 		Dial: (&net.Dialer{
 			Timeout: time.Duration(conf.HttpConnectinTimeout) * time.Second,
