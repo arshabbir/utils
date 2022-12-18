@@ -60,5 +60,6 @@ func (h *httpClient) Do(method string, url string, body io.Reader) ([]byte, erro
 	if err != nil {
 		return nil, err
 	}
+	defer resp.Body.Close()
 	return data, nil
 }
